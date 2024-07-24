@@ -1,0 +1,87 @@
+ body {
+   font-family: Arial, sans-serif;
+   background-color: rgb(129, 188, 196);
+   margin: 0;
+   padding: 0;
+ }
+
+ .center {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 50%;
+ }
+
+ button {
+   background-color: #c95824e3;
+   color: #252c25e3;
+   font-weight: 700;
+   outline: rgb(65, 143, 107);
+   cursor: pointer;
+   padding: 0.5%;
+   font-size: 13px;
+   border-radius: 5px;
+   margin-right: 10px;
+   margin-left: 10px;
+ }
+
+ .btn {
+   width: 150px;
+   height: 30px;
+ }
+
+ .btn-center {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
+ #population-chart,
+ #increment-chart,
+ #interactive-chart {
+   position: relative;
+   background-color: rgba(230, 216, 216, 0.9);
+   border-radius: 8px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   padding: 20px;
+   margin-top: 20px;
+ }
+
+ .scene {
+   display: none;
+   flex-direction: column;
+   align-items: center;
+   justify-content: flex-start;
+   width: 100%;
+   max-width: 800px;
+   margin-left: 200px;
+ }
+
+ .scene.active {
+   display: flex;
+ }
+
+ .tooltip {
+   position: absolute;
+   padding: 10px;
+   background-color: steelblue;
+   color: white;
+   border: 1px solid white;
+   border-radius: 10px;
+   display: none;
+   opacity: .75;
+ }
+
+ circle {
+   fill: steelblue;
+   stroke: black;
+   shape-rendering: geometricPrecision;
+ }
+
+ rect {
+   pointer-events: all;
+   fill-opacity: 0;
+   stroke-opacity: 0;
+   z-index: 1;
+ }
+
