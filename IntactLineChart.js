@@ -362,7 +362,7 @@ async function DrawLineChart(stYear, endYear, graphType) {
     const annot = [
       {
         note: {
-        label: "The graph has fluctions in the growth pattern",
+        label: "The graph has fluctuations in the growth pattern",
         title: "Increment in World Population"
         },
         x: 600,
