@@ -6,13 +6,6 @@ function OnLineChart1() {
   d3.select("population-chart").select("svg").remove();
   document.getElementById("population-chart").innerHTML = "";
 
-  // document.getElementById("intro-container").innerHTML = "";
-  // //document.getElementById("population-container").innerHTML = "";
-  // document.getElementById("population-container1").style.visibility = 'visible';
-  // d3.select("population-container").select("svg").remove();
-
-  // document.getElementById("intro-container").style.visibility = 'hide';
-
   const tooltip = d3.select("body")
   .append("div")
   .attr("class", "tooltip");
@@ -212,7 +205,15 @@ function OnLineChart2() {
       // Add the y-axis
   
       svg.append("g")
-        .call(d3.axisLeft(y))
+      .call(d3.axisLeft(y)
+        .tickFormat(function (d) {
+
+          if (d > 1000000) {
+            d = d / 1000000;
+          }
+          d = d + 'M';
+          return d;
+        }));
   
       // Create the line generator
   
@@ -244,7 +245,7 @@ function OnLineChart2() {
         .attr("x", 0 - (height / 2))
         .attr("dy", "1em")
         .style("text-anchor", "middle")
-        .text("Population Increment In Number");
+        .text("Increment");
       
       svg.append("text")
         .attr("class", "xlabel")

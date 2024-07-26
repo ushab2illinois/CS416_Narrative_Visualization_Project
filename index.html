@@ -10,22 +10,24 @@
 </head>
 
 <body>
-  <!-- Include the D3.js library -->
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/d3-annotation@4.0.0/dist/d3-annotation.min.js"></script>
   <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
   <script src="LineChart.js"></script>
   <script src="IntactLineChart.js"></script>
-  <!-- <script src="ScatterPlot.js"></script> -->
   <div id="intro-container" class="scene active">
     <h1 style="text-align: center">World Population Growth Trends</h1>
     <p style="text-align: center; font-size:12px">CS416 Narrative Visualization Project - Usha Bommasamudram</p>
     <img src="images/cover.jpeg" class="center">
-    <p>This project shows how world population has grown from year 1951 to 2023,
-      to explain the growth in terms of Total population, Increment of population in number.
-      Used <strong>Martini Glass structure</strong> for this project. User can analyze the population growth in the last
-      scene by choosing the desired option.
+    <p style="text-align: justify">This project illustrates the growth of the world population from 1951 to 2023,
+      focusing on both the total population figures and the incremental changes over time.
+      Utilizing <strong>Martini Glass structure</strong> provided a comprehensive view of population trends. In the
+      first two scenes, users can view line graphs depicting the total world population and the incremental changes in
+      population over the years.
+      In the final scene, users can analyze the population growth in detail by selecting their preferred options for a
+      customized analysis.
     </p>
+    <br>
     <div class="btn-center">
       <button id="LineChart1" type="button" class="btn" onclick="OnLineChart1()">Scene One</button>
     </div>
@@ -36,64 +38,64 @@
       <a>&nbsp</a>
       <a href="https://github.com/ushab2illinois/CS416_Narrative_Visualization_Project" target="_blank">Source Code</a>
       <a>&nbsp</a>
-      <a href="https://github.com/ushab2illinois/CS416_Narrative_Visualization_Project/tree/main/Documents" target="_blank">Essay</a>
+      <a href="https://github.com/ushab2illinois/CS416_Narrative_Visualization_Project/tree/main/Documents"
+        target="_blank">Essay</a>
     </p>
   </div>
   <div id="population-container" class="scene">
     <div id="pop-title">
       <h3 style="text-align: center">Total Population Overview</h3>
-      <p style="text-align: center"> This chart shows total population each year.</p>
-      <div id = 'population-chart'></div>
+      <p style="text-align: center"> This chart shows total world population for each year.</p>
+      <div id='population-chart'></div>
       <br>
       <div class="btn-center">
-        <button id="HomeScene" type="button" class="btn" onclick="OnHome()"><= Home</button>
-        <button id="LineChart2" type="button" class="btn" onclick="OnLineChart2()">Scene Two =></button>       
+        <button id="HomeScene" type="button" class="btn" onclick="OnHome()">
+          <= Home</button>
+            <button id="LineChart2" type="button" class="btn" onclick="OnLineChart2()">Scene Two =></button>
       </div>
-    </div>  
-  </div>  
+    </div>
+  </div>
   <div id="increment-container" class="scene">
     <div id="inc-title">
       <h3 style="text-align: center">Population Increment Overview</h3>
-      <p style="text-align: center"> This chart shows how much population increased with each year.</p>
+      <p style="text-align: center"> This chart shows the annual increase in the population each year.</p>
       <div id='increment-chart'></div>
       <br>
       <div class="btn-center">
-        <button id="LineChart11" type="button" class="btn" onclick="OnLineChart1()"><= Scene One </button>
-            <button id="InteractiveChart" type="button" class="btn" onclick="OnInteractiveChart()">Scene Three =></button>
+        <button id="LineChart11" type="button" class="btn" onclick="OnLineChart1()">
+          <= Scene One </button>
+            <button id="InteractiveChart" type="button" class="btn" onclick="OnInteractiveChart()">Scene Three
+              =></button>
       </div>
     </div>
   </div>
   <div id="interactive-container" class="scene">
     <div id="sca-title">
       <h3 style="text-align: center">Interactive Exploration of World Population Growth</h3>
-      <p style="text-align: Left"> This chart shows total population or increment in population with each year. Select the year range and the graph to see the changes in the population.</p>
-      <form>        
-      <!-- <div class="radio-buttons">       -->
+      <p style="text-align: Left"> This chart shows total population or increment in population for each year. Select
+        the year range and the graph to see the changes in the population.</p>
+      <form>
         <fieldset id="years">
           <strong> Select the Years Range </strong>
-        <label><input id = "yearRadio" type="radio" name="InputYears" value="1950-1975" checked> 1950-1975</label>
-        <label><input type="radio" name="InputYears" value="1976-1990"> 1976-1990</label>
-        <label><input type="radio" name="InputYears" value="1991-2005"> 1991-2005</label>
-        <label><input type="radio" name="InputYears" value="2006-2025"> 2006-2025</label>
-        <label><input type="radio" name="InputYears" value="1950-2025"> All</label>
-      </fieldset><br>
-    
-      <fieldset id="graph">
-      <strong> Select the Graph </strong>
-      <label><input id = "popRadio" type="radio" name="GraphType" value="Population" checked> Population</label>
-      <label><input type="radio" name="GraphType" value="Increment"> Increment</label>
-       </fieldset>      
+          <label><input id="yearRadio" type="radio" name="InputYears" value="1950-1975" checked> 1950-1975</label>
+          <label><input type="radio" name="InputYears" value="1976-1990"> 1976-1990</label>
+          <label><input type="radio" name="InputYears" value="1991-2005"> 1991-2005</label>
+          <label><input type="radio" name="InputYears" value="2006-2025"> 2006-2025</label>
+          <label><input type="radio" name="InputYears" value="1950-2025"> All</label>
+        </fieldset><br>
+
+        <fieldset id="graph">
+          <strong> Select the Graph </strong>
+          <label><input id="popRadio" type="radio" name="GraphType" value="Population" checked> Population</label>
+          <label><input type="radio" name="GraphType" value="Increment"> Increment</label>
+        </fieldset>
       </form>
-      <!-- <div>
-        <p style="text-align: Left">** Hover over the line chart to see the <strong>Tooltip</strong> with the information.</p>
-      </div> -->
-      <!-- </div> -->
       <div id='interactive-chart'></div>
       <br>
       <div class="btn-center">
-        <button id="LineChart22" type="button" class="btn" onclick="OnLineChart2()"><= Scene Two </button>
-        <button id="Home2" type="button" class="btn" onclick="OnHome()">Home</button>
-        
+        <button id="LineChart22" type="button" class="btn" onclick="OnLineChart2()">
+          <= Scene Two </button>
+            <button id="Home2" type="button" class="btn" onclick="OnHome()">Home</button>
       </div>
       <br>
       <br>
